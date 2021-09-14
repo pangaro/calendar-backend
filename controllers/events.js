@@ -21,7 +21,7 @@ const createEvent = async( req, res = response ) => {
         event.user = req.uid;
 
         const eventBD = await event.save();
-        console.log(eventBD)
+        // console.log(eventBD)
         res.status(201).json({
             ok: true,
             event: eventBD,
@@ -101,11 +101,6 @@ const deleteEvent = async( req, res = response ) => {
                 ok: false,
                 msg: 'No puede eliminar eventos de otros usruarios'
             });
-        }
-
-        const newEvent = {
-            ...req.body,
-            user: uid 
         }
 
         await Event.findByIdAndDelete( eventId );
