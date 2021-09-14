@@ -10,7 +10,7 @@ const { generarJWT } = require('../helpers/jwt');
 // response--> si lo importo tengo el intellisense
  const crearUsuario = async( req, res = response ) => {
     // res.send('Hello World')
-    //console.log(req.body)
+    // console.log(req.body)
     const { email, password } = req.body;
 
     try {
