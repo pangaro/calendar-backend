@@ -21,8 +21,6 @@ const { generarJWT } = require('../helpers/jwt');
         if ( user ) {
             return res.status(400).json({
                 ok: false,
-                uid: user.id,  
-                name: user.name,
                 msg: 'El email ya está registrado'
             });
         }
@@ -113,6 +111,8 @@ const { uid, name } = req;
             
     res.status(200).json({
         ok: true,
+        uid,
+        name,
         token,
     });
 }
